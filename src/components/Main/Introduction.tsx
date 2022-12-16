@@ -17,9 +17,10 @@ const Wrapper = styled.div`
   overflow: hidden;
   margin: 0 auto;
   max-width: 468px;
+  border: 1px solid #ddd;
   border-radius: 12px;
-  box-shadow: rgb(0 0 0 / 10%) 0 3px 8px;
   background-color: #fff;
+  box-shadow: rgb(0 0 0 / 10%) 0 3px 8px;
   box-sizing: border-box;
 `
 

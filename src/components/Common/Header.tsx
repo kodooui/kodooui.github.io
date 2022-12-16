@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 const HeaderWrapper = styled.header`
   background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: rgb(0 0 0 / 24%) 0 3px 8px;
+  box-shadow: rgb(0 0 0 / 12%) 0 3px 16px;
   
   @media (max-width: 767px) {
     box-shadow: rgb(0 0 0 / 12%) 0 0 4px;
