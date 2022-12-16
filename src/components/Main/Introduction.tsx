@@ -118,26 +118,9 @@ const TabCotent = styled.div`
 const InfoText = styled.span`
   position: relative;
   display: block;
-  padding-left: 20px;
   font-size: 17px;
   font-weight: 500;
   line-height: 40px;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 6px;
-    height: 6px;
-    background-color: #333;
-    border-radius: 50%;
-    transform: translateY(-50%);
-  }
-  
-  & + span {
-    margin-top: 3px;
-  }
 `
 
 const Highlight = styled.em`
@@ -145,8 +128,8 @@ const Highlight = styled.em`
   padding: 3px 5px;
   border-radius: 8px;
   background-color: #eff1f2;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 17px;
+  font-weight: 600;
 `
 
 const GithubLink = styled.a`
