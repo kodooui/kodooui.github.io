@@ -15,11 +15,11 @@ const FooterWrapper = styled.footer`
   }
 `
 
-const Footer: FunctionComponent = function () {
+const Footer: FunctionComponent = () => {
   return (
     <FooterWrapper>
       Thank You for Visiting My Blog, Have a Good Day 😆
-      <br />© 2022 Developer Woo, Powered By Gatsby.
+      <br />© 2022 Developer Kodoo, Powered By Gatsby.
     </FooterWrapper>
   )
 }

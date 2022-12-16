@@ -2,7 +2,9 @@ import React, { FunctionComponent, ReactNode } from "react";
 import { Helmet } from 'react-helmet';
 import styled from "@emotion/styled";
 import GlobalStyle from "components/Common/GlobalStyle";
+import Header from "components/Common/Header";
 import Footer from "components/Common/Footer";
+import Main from "components/Common/Main";
 
 type TemplateProps = {
   title: string;
@@ -52,7 +54,11 @@ const Template: FunctionComponent<TemplateProps> = function ({
             </Helmet>
 
             <GlobalStyle />
-            { children }
+
+            <Header />
+            <Main>
+              { children }
+            </Main>
             <Footer />
         </Container>
     )

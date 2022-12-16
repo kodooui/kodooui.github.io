@@ -1,5 +1,4 @@
 import React, {FunctionComponent, useMemo} from 'react';
-import styled from "@emotion/styled";
 import Introduction from "components/Main/Introduction";
 import CategoryList, {CategoryListProps} from "components/Main/CategoryList";
 import PostList from "components/Main/PostList";
@@ -87,14 +86,14 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       image={publicURL}
     >
       <Introduction profileImage={gatsbyImageData} />
-      <CategoryList
-        selectedCategory={selectedCategory}
-        categoryList={categoryList}
-      />
-      <PostList
-        selectedCategory={selectedCategory}
-        posts={edges}
-      />
+      {/*<CategoryList*/}
+      {/*  selectedCategory={selectedCategory}*/}
+      {/*  categoryList={categoryList}*/}
+      {/*/>*/}
+      {/*<PostList*/}
+      {/*  selectedCategory={selectedCategory}*/}
+      {/*  posts={edges}*/}
+      {/*/>*/}
     </Template>
   )
 };
