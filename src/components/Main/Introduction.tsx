@@ -81,6 +81,7 @@ const TabItem = styled.li`
   align-items: center;
   position: relative;
   padding: 0 10px;
+  min-width: 145px;
   height: 36px;
   border-radius: 10px 10px 0 0;
   background-color: #fff;
@@ -171,8 +172,8 @@ const Introduction: FunctionComponent<IntroductionProps> = function ({
         </TabList>
       </TabBar>
       <TabCotent>
-        <InfoText><Highlight>👨‍💻 UI Dev</Highlight> 2018.09 ~ 2022.03</InfoText>
-        <InfoText><Highlight>🌱 FE Dev</Highlight> 2022.04 ...</InfoText>
+        <InfoText><Highlight>👨‍💻 UI Dev</Highlight> 2018.09 - 2022.03</InfoText>
+        <InfoText><Highlight>🌱 FE Dev</Highlight> 2022.04.</InfoText>
         <InfoText><GithubLink href="https://github.com/kodooui" target="_blank">Github</GithubLink></InfoText>
       </TabCotent>
     </Wrapper>
