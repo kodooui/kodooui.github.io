@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react"
+import React, { FunctionComponent, useEffect, useState } from "react";
 import {graphql} from "gatsby";
 import Template from "components/Common/Template";
 import PostHead from "components/Post/PostHead";
@@ -49,7 +49,13 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = ({
     }
   } = edges[0];
 
-  const tabType = href.includes('dev') ? TabTypes.dev : TabTypes.life;
+  const [tabType, setTabType] = useState(TabTypes.dev);
+
+  useEffect(() => {
+    if (location.href) {
+      setTabType(location.href.includes('dev') ? TabTypes.dev : TabTypes.life);
+    }
+  }, [location.href])
 
   return (
     <Template
