@@ -8,6 +8,12 @@ type PostItemProps = PostFrontmatterType & { link: string }
 
 const PostItemWrapper = styled.article`
   position: relative;
+
+  @media (max-width: 767px) {
+    & + article {
+      margin-top: 40px;
+    }
+  }
 `;
 
 const ThumbnailWrapper = styled.div`
@@ -31,6 +37,10 @@ const ThumbnailImage = styled(GatsbyImage)`
 
 const PostItemContent = styled.div`
   padding: 25px 2px;
+
+  @media (max-width: 767px) {
+    padding: 12px 2px;
+  }
 `;
 
 const Title = styled.h3`
@@ -43,12 +53,20 @@ const Title = styled.h3`
   -webkit-box-orient: vertical;
   font-size: 30px;
   font-weight: 600;
+
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
 `;
 
 const Category = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 10px -5px;
+
+  @media (max-width: 767px) {
+    margin: 8px -5px;
+  }
 `;
 
 const CategoryItem = styled.div`
@@ -57,6 +75,11 @@ const CategoryItem = styled.div`
   font-size: 19px;
   font-weight: 500;
   color: #5d89ff;
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+    margin: 2.5px 4px;
+  }
 `;
 
 const Summary = styled.p`
@@ -72,6 +95,12 @@ const Summary = styled.p`
   font-size: 17px;
   line-height: 22px;
   opacity: 0.8;
+
+  @media (max-width: 767px) {
+    margin: 8px 0;
+    font-size: 15px;
+    line-height: 19px;
+  }
 `;
 
 const Date = styled.time`
@@ -79,6 +108,11 @@ const Date = styled.time`
   font-size: 15px;
   font-weight: 400;
   opacity: 0.7;
+
+  @media (max-width: 767px) {
+    padding: 0 2px;
+    font-size: 14px;
+  }
 `;
 
 

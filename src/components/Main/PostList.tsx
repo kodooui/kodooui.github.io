@@ -12,9 +12,25 @@ type PostListProps = {
 const PostListWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 55px;
+  gap: 42px;
   padding: 60px 40px;
   box-sizing: border-box;
+  
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 20px 30px;
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-left: 0;
+  }
+  @media (min-width: 1024px) and (max-width: 1359px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding-left: 0;
+  }
 `;
 
 const PostList: FunctionComponent<PostListProps> = function ({

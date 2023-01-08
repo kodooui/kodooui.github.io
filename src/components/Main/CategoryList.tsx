@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, FunctionComponent, ReactNode, useEffect, useRef, useState } from "react";
+import React, { ButtonHTMLAttributes, FunctionComponent, useEffect, useRef, useState } from "react";
 import styled from "@emotion/styled";
 
 export type CategoryListProps = {
@@ -11,6 +11,10 @@ export type CategoryListProps = {
 
 const CategoryListWrapper = styled.div`
   padding: 68px 40px;
+
+  @media (max-width: 767px) {
+    padding: 54px 30px;
+  }
 `
 
 const CategoryListGroup = styled.div`
@@ -22,10 +26,12 @@ const CategoryItem = styled(({ ...props }: ButtonHTMLAttributes<HTMLButtonElemen
 ))`
   display: block;
   position: relative;
-  padding: 14px 20px;
+  padding: 0 20px;
   min-width: 150px;
+  height: 48px;
   border-radius: 5px;
   font-size: 17px;
+  line-height: 48px;
   text-align: left;
   
   &.is-active {
@@ -83,19 +89,12 @@ const CategoryList: FunctionComponent<CategoryListProps> = function ({
   changeCategory,
 }) {
   const categoryGroupRef = useRef<HTMLDivElement>(null);
-  const [baseOffsetTop, setBaseOffsetTop] = useState(0);
   const [offsetTop, setOffsetTop] = useState(0);
 
-  useEffect(() => {
-    if (categoryGroupRef.current) {
-      const { top } = categoryGroupRef.current.getBoundingClientRect();
-      setBaseOffsetTop(top);
-    }
-  }, [])
-
-  const onClickHandler = (el: HTMLButtonElement, name: string) => {
-    const { top } = el.getBoundingClientRect();
-    setOffsetTop(top - baseOffsetTop);
+  const onClickHandler = (el: HTMLButtonElement, name: string, index: number) => {
+    const { height } = el.getBoundingClientRect();
+    const top = (height * index) + (8 * index);
+    setOffsetTop(top);
     changeCategory(name);
   }
 
@@ -108,10 +107,10 @@ const CategoryList: FunctionComponent<CategoryListProps> = function ({
     <CategoryListWrapper>
       <CategoryListGroup ref={categoryGroupRef}>
         <ShadowBox style={{ transform: `translateY(${offsetTop}px)` }} />
-        {categoryList.map(([name]) => (
+        {categoryList.map(([name], index) => (
           <CategoryItem
             className={selectedCategory === name ? 'is-active' : ''}
-            onClick={e => onClickHandler(e.target as HTMLButtonElement, name)}
+            onClick={e => onClickHandler(e.target as HTMLButtonElement, name, index)}
             key={name}
           >
             {name}
