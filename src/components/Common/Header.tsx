@@ -54,6 +54,7 @@ const TabWrap = styled.div`
 const TabGroup = styled.nav`
   position: relative;
   overflow: hidden;
+  border-radius: 55px;
   background-color: #fff;
   
   &::after {

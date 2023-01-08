@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Kodoo's Dev.Blog`,
+    title: `Kodoo's Blog`,
     description: `FE 지식 탐구중 (o-o)`,
-    author: `kodooui`,
-    siteUrl: `https://kodooui.github.io/`,
+    author: `kowoo0`,
+    siteUrl: `https://kiwoo0.github.io/`,
   },
   plugins: [
     {
@@ -19,7 +19,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: 'https://kodooui.github.io/',
+        siteUrl: 'https://kowoo0.github.io/',
         stripQueryString: true,
       }
     },
