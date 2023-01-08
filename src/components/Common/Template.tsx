@@ -1,11 +1,12 @@
-import React, { FunctionComponent, ReactNode } from "react";
+import React, { FunctionComponent, ReactNode, useState } from "react";
 import { Helmet } from 'react-helmet';
 import styled from "@emotion/styled";
 import GlobalStyle from "components/Common/GlobalStyle";
-import Header from "components/Common/Header";
+import Header, { GithubLink, HeaderWrapper, TabWrap } from "components/Common/Header";
 import Footer from "components/Common/Footer";
 import Main from "components/Common/Main";
 import { TabType } from "../../types/Tab.types";
+import { AsideWrapper } from "components/Common/Aside";
 
 type TemplateProps = {
   title: string;
@@ -20,6 +21,25 @@ const Container = styled.main`
   display: flex;
   flex-direction: column;
   height: 100%;
+
+  @media (max-width: 767px) {
+    &.menu-open {
+      & ${AsideWrapper} {
+        display: block;
+      }
+      & ${HeaderWrapper} {
+        background-color: #fff;
+        backdrop-filter: none;
+      }
+      & ${GithubLink} {
+        display: inline-block;
+      }
+      & ${TabWrap} {
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+  }
 `
 
 const Template: FunctionComponent<TemplateProps> = function ({
@@ -30,10 +50,13 @@ const Template: FunctionComponent<TemplateProps> = function ({
   tabType,
   children,
 }) {
-
+    const [menu, setMenu] = useState(false);
+    const toggleMenu = () => {
+      setMenu(!menu);
+    }
 
     return (
-        <Container id="wrap">
+        <Container id="wrap" className={menu ? 'menu-open' : ''}>
             <Helmet>
               <title>{title}</title>
               <meta name="description" content={description} />
@@ -60,7 +83,11 @@ const Template: FunctionComponent<TemplateProps> = function ({
 
             <GlobalStyle />
 
-            <Header tab={tabType} />
+            <Header
+              tab={tabType}
+              menu={menu}
+              toggleMenu={toggleMenu}
+            />
             <Main>
               { children }
             </Main>
