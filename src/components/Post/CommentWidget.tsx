@@ -2,7 +2,7 @@ import React, { createRef, useEffect, FunctionComponent } from 'react';
 import styled from '@emotion/styled'
 
 const src = 'https://utteranc.es/client.js';
-const repo = 'kodooui/kodooui.github.io';
+const repo = 'kowoo0/kowoo0.github.io';
 
 type UtterancesAttributesType = {
   src: string
