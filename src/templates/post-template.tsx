@@ -55,7 +55,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = ({
     if (location.href) {
       setTabType(location.href.includes('dev') ? TabTypes.dev : TabTypes.life);
     }
-  }, [location.href])
+  }, [])
 
   return (
     <Template
