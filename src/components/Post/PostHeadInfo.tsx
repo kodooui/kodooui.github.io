@@ -2,29 +2,29 @@ import React, { FunctionComponent } from "react";
 import styled from "@emotion/styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "gatsby";
+import { TabType } from "../../types/Tab.types";
+import { TabTypes } from "../../constants";
 
 export type PostHeadInfoProps = {
   title: string
   date: string
   categories: string[]
+  tabType: TabType;
 }
 
 const PostHeadInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 768px;
+  width: 1440px;
   height: 100%;
   margin: 0 auto;
-  padding: 60px 0;
-  color: #ffffff;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 40px 20px;
-  }
+  padding: 60px 40px;
+  color: #fff;
+  box-sizing: border-box;
 `
 
-const PrevPageIcon = styled.div`
+const PrevPageLink = styled(Link)`
   display: grid;
   place-items: center;
   width: 40px;
@@ -47,7 +47,9 @@ const Title = styled.div`
   display: -webkit-box;
   overflow: hidden;
   overflow-wrap: break-word;
-  margin-top: auto;
+  margin: auto auto 0;
+  width: 100%;
+  max-width: 768px;
   text-overflow: ellipsis;
   white-space: normal;
   -webkit-line-clamp: 2;
@@ -64,7 +66,9 @@ const PostData = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
+  margin: 15px auto 0;
+  width: 100%;
+  max-width: 768px;
   font-size: 18px;
   font-weight: 700;
 
@@ -80,18 +84,18 @@ const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
   title,
   date,
   categories,
+  tabType
 }) {
-  const goBackPage = () => window.history.back();
 
   return (
     <PostHeadInfoWrapper>
-      <PrevPageIcon onClick={goBackPage}>
+      <PrevPageLink to={tabType === TabTypes.dev ? '/' : '/life'}>
         <FontAwesomeIcon icon={faArrowLeft} />
-      </PrevPageIcon>
+      </PrevPageLink>
       <Title>{title}</Title>
       <PostData>
-        <div>{categories.join(' / ')}</div>
-        <div>{date}</div>
+        <span>{categories.join(' · ')}</span>
+        <time dateTime={date.replace(/\./g, '-')}>{date}</time>
       </PostData>
     </PostHeadInfoWrapper>
   )

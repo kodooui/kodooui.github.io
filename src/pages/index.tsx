@@ -7,6 +7,7 @@ import {IGatsbyImageData} from "gatsby-plugin-image";
 import Template from "components/Common/Template";
 import Aside from "components/Common/Aside";
 import Content from "components/Common/Content";
+import Container from "components/Main/Container";
 import { TabTypes } from "../constants";
 
 
@@ -88,19 +89,21 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       image={publicURL}
       tabType={tabType}
     >
-      <Aside>
-        <CategoryList
-          selectedCategory={selectedCategory}
-          categoryEntities={categoryEntities}
-          changeCategory={changeCategory}
-        />
-      </Aside>
-      <Content>
-        <PostList
-          selectedCategory={selectedCategory}
-          posts={edges}
-        />
-      </Content>
+      <Container>
+        <Aside>
+          <CategoryList
+            selectedCategory={selectedCategory}
+            categoryEntities={categoryEntities}
+            changeCategory={changeCategory}
+          />
+        </Aside>
+        <Content>
+          <PostList
+            selectedCategory={selectedCategory}
+            posts={edges}
+          />
+        </Content>
+      </Container>
     </Template>
   )
 };

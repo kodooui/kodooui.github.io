@@ -70,6 +70,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = ({
         date={date}
         categories={categories}
         thumbnail={gatsbyImageData}
+        tabType={tabType}
       />
       <PostContent html={html} />
       <CommentWidget />
