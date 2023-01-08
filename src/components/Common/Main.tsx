@@ -2,17 +2,24 @@ import React, { FunctionComponent, ReactNode } from "react";
 import styled from "@emotion/styled";
 
 const MainWrapper = styled.div`
-  margin-top: 80px;
+  position: relative;
+  margin-top: 90px;
+`
 
-  @media (max-width: 767px) {
-    margin: 30px 20px 0;
-  }
+const Container = styled.div`
+  display: grid;
+  margin: 0 auto;
+  max-width: 1440px;
+  box-sizing: border-box;
+  grid-template-columns: 22fr 65fr 13fr;
 `
 
 const Main: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
   return (
     <MainWrapper>
-      { children }
+      <Container>
+        { children }
+      </Container>
     </MainWrapper>
   )
 }

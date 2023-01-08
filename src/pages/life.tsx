@@ -1,6 +1,4 @@
-import React, { FunctionComponent, useMemo, useState } from "react";
-import CategoryList, {CategoryListProps} from "components/Main/CategoryList";
-import PostList from "components/Main/PostList";
+import React, { FunctionComponent } from "react";
 import {graphql} from "gatsby";
 import {PostListItemType} from "../types/PostItem.types";
 import {IGatsbyImageData} from "gatsby-plugin-image";
@@ -10,7 +8,7 @@ import Content from "components/Common/Content";
 import { TabTypes } from "../constants";
 
 
-type IndexPageProps = {
+type LifePageProps = {
   location: {
     search: string
   }
@@ -34,51 +32,22 @@ type IndexPageProps = {
   }
 }
 
-const IndexPage: FunctionComponent<IndexPageProps> = function ({
-  data: {
-    site: {
-      siteMetadata: { title, description, siteUrl, },
-    },
-    allMarkdownRemark: { edges },
-    file: {
-      childImageSharp: {
-        gatsbyImageData
-      },
-      publicURL,
-    }
-  },
+const LifePage: FunctionComponent<LifePageProps> = function ({
+ data: {
+   site: {
+     siteMetadata: { title, description, siteUrl, },
+   },
+   allMarkdownRemark: { edges },
+   file: {
+     childImageSharp: {
+       gatsbyImageData
+     },
+     publicURL,
+   }
+ },
 }) {
-  const [selectedCategory, setCategory] = useState('All');
-  const changeCategory = (category: string) => {
-    setCategory(category);
-  }
 
-  const tabType = TabTypes.dev;
-
-  const categoryEntities = useMemo(
-    () =>
-      edges.reduce(
-        (
-          list: CategoryListProps['categoryEntities'],
-          {
-            node: {
-              frontmatter: { categories },
-            },
-          }: PostListItemType
-        ) => {
-          categories.forEach(category => {
-            if (list[category] === undefined) list[category] = 1;
-            else list[category]++;
-          });
-
-          list['All']++;
-
-          return list;
-        },
-        { All: 0 },
-      ),
-    [],
-  )
+  const tabType = TabTypes.life;
 
   return (
     <Template
@@ -89,23 +58,16 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       tabType={tabType}
     >
       <Aside>
-        <CategoryList
-          selectedCategory={selectedCategory}
-          categoryEntities={categoryEntities}
-          changeCategory={changeCategory}
-        />
+
       </Aside>
       <Content>
-        <PostList
-          selectedCategory={selectedCategory}
-          posts={edges}
-        />
+
       </Content>
     </Template>
   )
 };
 
-export default IndexPage;
+export default LifePage;
 
 export const getPostList = graphql`
   query getPostList {

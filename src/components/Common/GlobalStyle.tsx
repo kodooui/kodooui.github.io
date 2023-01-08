@@ -20,7 +20,7 @@ const defaultStyle = css`
   }
 
   body {
-    background-color: #f1f2f6;
+    background-color: #fff;
     color: #333;
   }
 
@@ -43,6 +43,7 @@ const defaultStyle = css`
 
   button {
     border: 0;
+    background-color: transparent;
     cursor: pointer;
   }
 

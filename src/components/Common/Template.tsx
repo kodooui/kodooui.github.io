@@ -5,12 +5,14 @@ import GlobalStyle from "components/Common/GlobalStyle";
 import Header from "components/Common/Header";
 import Footer from "components/Common/Footer";
 import Main from "components/Common/Main";
+import { TabType } from "../../types/Tab.types";
 
 type TemplateProps = {
   title: string;
   description: string;
   url: string;
   image: string;
+  tabType: TabType;
   children: ReactNode;
 }
 
@@ -25,10 +27,13 @@ const Template: FunctionComponent<TemplateProps> = function ({
   description,
   url,
   image,
+  tabType,
   children,
 }) {
+
+
     return (
-        <Container>
+        <Container id="wrap">
             <Helmet>
               <title>{title}</title>
               <meta name="description" content={description} />
@@ -55,7 +60,7 @@ const Template: FunctionComponent<TemplateProps> = function ({
 
             <GlobalStyle />
 
-            <Header />
+            <Header tab={tabType} />
             <Main>
               { children }
             </Main>
