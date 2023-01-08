@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Woo's 주니어 개발 블로그`,
-    description: `유용한 정보를 전달하도록 노력하고 있습니다. `,
+    title: `Kodoo's Dev.Blog`,
+    description: `FE 지식 탐구중 (o-o)`,
     author: `kodooui`,
     siteUrl: `https://kodooui.github.io/`,
   },

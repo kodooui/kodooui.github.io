@@ -4,24 +4,25 @@ import {GatsbyImage, IGatsbyImageData} from "gatsby-plugin-image";
 
 type ProfileImageProps = {
   profileImage: IGatsbyImageData
+} & ImageSize;
+
+type ImageSize = {
+  width: number;
+  height: number;
 }
 
-const ProfileImageWrapper = styled(GatsbyImage)`
-  width: 120px;
-  height: 120px;
-  margin-bottom: 30px;
+const ProfileImageWrapper = styled(GatsbyImage)<ImageSize>`
+  width: ${({ width }) => width + 'px'};
+  height: ${({ height }) => height + 'px'};
   border-radius: 50%;
-
-  @media (max-width: 768px) {
-    width: 80px;
-    height: 80px;
-  }
 `;
 
 const ProfileImage: FunctionComponent<ProfileImageProps> = function ({
+  width,
+  height,
   profileImage
 }) {
-  return <ProfileImageWrapper image={profileImage} alt="Profile Image" />
+  return <ProfileImageWrapper image={profileImage} width={width} height={height} alt="프로필 이미지" />
 }
 
 export default ProfileImage

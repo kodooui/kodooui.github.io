@@ -2,13 +2,17 @@ import React, { FunctionComponent, ReactNode } from "react";
 import { Helmet } from 'react-helmet';
 import styled from "@emotion/styled";
 import GlobalStyle from "components/Common/GlobalStyle";
+import Header from "components/Common/Header";
 import Footer from "components/Common/Footer";
+import Main from "components/Common/Main";
+import { TabType } from "../../types/Tab.types";
 
 type TemplateProps = {
   title: string;
   description: string;
   url: string;
   image: string;
+  tabType: TabType;
   children: ReactNode;
 }
 
@@ -23,10 +27,13 @@ const Template: FunctionComponent<TemplateProps> = function ({
   description,
   url,
   image,
+  tabType,
   children,
 }) {
+
+
     return (
-        <Container>
+        <Container id="wrap">
             <Helmet>
               <title>{title}</title>
               <meta name="description" content={description} />
@@ -52,7 +59,11 @@ const Template: FunctionComponent<TemplateProps> = function ({
             </Helmet>
 
             <GlobalStyle />
-            { children }
+
+            <Header tab={tabType} />
+            <Main>
+              { children }
+            </Main>
             <Footer />
         </Container>
     )
