@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://kodooui.github.io/sitemap/sitemap-index.xml
-Host: https://kodooui.github.io
+Sitemap: https://kiwoo0.github.io/sitemap/sitemap-index.xml
+Host: https://kiwoo0.github.io
