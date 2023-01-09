@@ -16,7 +16,7 @@ const MarkdownRenderer = styled.div`
 
   // Markdown Style
   line-height: 1.8;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
 
   // Apply Padding Attribute to All Elements
@@ -61,7 +61,7 @@ const MarkdownRenderer = styled.div`
     margin: 30px 0;
     padding: 5px 15px;
     border-left: 2px solid #000000;
-    font-weight: 800;
+    font-weight: 600;
   }
 
   // Adjust List Element Style
@@ -87,7 +87,7 @@ const MarkdownRenderer = styled.div`
   pre[class*='language-'] {
     margin: 30px 0;
     padding: 15px;
-    font-size: 15px;
+    font-size: 16px;
 
     ::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.5);
