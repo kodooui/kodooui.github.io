@@ -16,7 +16,7 @@ const defaultStyle = css`
   }
 
   body, input, textarea, select, button {
-    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Apple SD Gothic Neo, sans-serif;
+    font-family: Varela Round, Noto Sans Korean, -apple-system, BlinkMacSystemFont, Helvetica Neue, Apple SD Gothic Neo, sans-serif;
   }
 
   body {

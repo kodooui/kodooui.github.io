@@ -3,7 +3,7 @@ module.exports = {
     title: `Kodoo's Blog`,
     description: `FE 지식 탐구중 (o-o)`,
     author: `kowoo0`,
-    siteUrl: `https://kiwoo0.github.io/`,
+    siteUrl: `https://kowoo0.github.io/`,
   },
   plugins: [
     {
@@ -59,6 +59,16 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         icon: `${__dirname}/static/profile-image.png`,
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Varela Round`,
+          `Nanum Gothic Coding`,
+        ],
+        display: 'swap'
       }
     },
     {
