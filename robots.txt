@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://kiwoo0.github.io/sitemap/sitemap-index.xml
-Host: https://kiwoo0.github.io
+Sitemap: https://kowoo0.github.io/sitemap/sitemap-index.xml
+Host: https://kowoo0.github.io
