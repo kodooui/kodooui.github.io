@@ -27,7 +27,7 @@ const ThumbnailWrapper = styled.div`
   transition-timing-function: ease;
 
   @media (max-width: 767px) {
-    box-shadow: rgb(0 0 0 / 15%) 0 0 1px;
+    box-shadow: rgb(0 0 0 / 24%) 0 0 1px;
   }
 `
 
@@ -37,6 +37,10 @@ const ThumbnailImage = styled(GatsbyImage)`
   left: 0;
   right: 0;
   bottom: 0;
+
+  img {
+    border-radius: 16px;
+  }
 `;
 
 const PostItemContent = styled.div`
@@ -121,6 +125,7 @@ const Date = styled.time`
 
 const PostItemLink = styled(Link)`
   cursor: pointer;
+  display: block;
 
   &:hover ${ThumbnailWrapper} {
     transform: translateY(-10px);

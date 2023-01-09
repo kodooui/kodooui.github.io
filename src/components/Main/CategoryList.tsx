@@ -30,6 +30,7 @@ const CategoryItem = styled(({ ...props }: ButtonHTMLAttributes<HTMLButtonElemen
   min-width: 150px;
   height: 48px;
   border-radius: 5px;
+  color: #000;
   font-size: 17px;
   line-height: 48px;
   text-align: left;

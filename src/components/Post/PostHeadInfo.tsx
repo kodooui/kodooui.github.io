@@ -42,9 +42,7 @@ const PrevPageLink = styled(Link)`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 767px) {
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
+    display: none;
   }
 `
 

@@ -17,6 +17,7 @@ const defaultStyle = css`
 
   body, input, textarea, select, button {
     font-family: Varela Round, Noto Sans Korean, -apple-system, BlinkMacSystemFont, Helvetica Neue, Apple SD Gothic Neo, sans-serif;
+    letter-spacing: -0.5px;
   }
 
   body {
