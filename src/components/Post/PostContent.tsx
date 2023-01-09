@@ -28,7 +28,7 @@ const MarkdownRenderer = styled.div`
   h1,
   h2,
   h3 {
-    font-weight: 800;
+    font-weight: 600;
     margin-bottom: 30px;
   }
 
@@ -45,15 +45,15 @@ const MarkdownRenderer = styled.div`
   }
 
   h1 {
-    font-size: 30px;
+    font-size: 33px;
   }
 
   h2 {
-    font-size: 25px;
+    font-size: 28px;
   }
 
   h3 {
-    font-size: 20px;
+    font-size: 23px;
   }
 
   // Adjust Quotation Element Style
