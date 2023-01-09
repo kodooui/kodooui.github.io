@@ -25,6 +25,10 @@ const ThumbnailWrapper = styled.div`
   transition-property: transform, box-shadow;
   transition-duration: 0.2s;
   transition-timing-function: ease;
+
+  @media (max-width: 767px) {
+    box-shadow: rgb(0 0 0 / 15%) 0 0 1px;
+  }
 `
 
 const ThumbnailImage = styled(GatsbyImage)`
@@ -51,8 +55,8 @@ const Title = styled.h3`
   overflow-wrap: break-word;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 500;
 
   @media (max-width: 767px) {
     font-size: 24px;
@@ -62,18 +66,17 @@ const Title = styled.h3`
 const Category = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 10px -5px;
+  margin: 5px -5px 10px;
 
   @media (max-width: 767px) {
-    margin: 8px -5px;
+    margin: 4px -5px 6px;
   }
 `;
 
 const CategoryItem = styled.div`
   margin: 2.5px 5px;
   padding: 3px 2px;
-  font-size: 19px;
-  font-weight: 500;
+  font-size: 18px;
   color: #5d89ff;
 
   @media (max-width: 767px) {
@@ -92,13 +95,13 @@ const Summary = styled.p`
   overflow-wrap: break-word;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 22px;
   opacity: 0.8;
 
   @media (max-width: 767px) {
     margin: 8px 0;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 19px;
   }
 `;
@@ -121,7 +124,7 @@ const PostItemLink = styled(Link)`
 
   &:hover ${ThumbnailWrapper} {
     transform: translateY(-10px);
-    box-shadow: #efefef 0 4px 12px;
+    box-shadow: #ccc 0 4px 12px;
   }
   &:hover ${PostItemContent} {
     filter: contrast(200%);

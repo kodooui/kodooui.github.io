@@ -52,7 +52,11 @@ const Title = styled.h1`
   height: 90px;
   color: #333;
   font-size: 37px;
-  line-height: 83px;
+  line-height: 92px;
+
+  @media (max-width: 767px) {
+    line-height: 90px;
+  }
 `
 
 export const TabWrap = styled.div`

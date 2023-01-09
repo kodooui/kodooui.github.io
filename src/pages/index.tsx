@@ -120,6 +120,7 @@ export const getPostList = graphql`
       }
     }
     allMarkdownRemark(
+      filter: {fields: {slug: {glob: "/dev/*"}}},
       sort: { order: DESC, fields: frontmatter___id }
     ) {
       edges {

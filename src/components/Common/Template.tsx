@@ -30,13 +30,13 @@ const Container = styled.main`
       & ${HeaderWrapper} {
         background-color: #fff;
         backdrop-filter: none;
+        height: 100vh;
       }
       & ${GithubLink} {
         display: inline-block;
       }
       & ${TabWrap} {
         display: flex;
-        justify-content: flex-start;
       }
     }
   }

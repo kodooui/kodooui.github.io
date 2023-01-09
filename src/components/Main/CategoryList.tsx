@@ -13,7 +13,7 @@ const CategoryListWrapper = styled.div`
   padding: 68px 40px;
 
   @media (max-width: 767px) {
-    padding: 54px 30px;
+    padding: 60px 30px;
   }
 `
 
@@ -33,9 +33,11 @@ const CategoryItem = styled(({ ...props }: ButtonHTMLAttributes<HTMLButtonElemen
   font-size: 17px;
   line-height: 48px;
   text-align: left;
+  transition: font-size 0.3s ease-out;
   
   &.is-active {
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: 500;
   }
 
   @supports not (mix-blend-mode: difference) {

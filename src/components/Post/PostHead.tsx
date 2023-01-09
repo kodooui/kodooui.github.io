@@ -18,6 +18,10 @@ const PostHeadWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 520px;
+  
+  @media (max-width: 767px) {
+    height: 400px;
+  }
 `;
 
 const BackgroundImage = styled(( props: GatsbyImgProps ) => (
@@ -27,6 +31,10 @@ const BackgroundImage = styled(( props: GatsbyImgProps ) => (
   width: 100%;
   height: 520px;
   filter: brightness(0.25);
+
+  @media (max-width: 767px) {
+    height: 400px;
+  }
 `;
 
 const PostHead: FunctionComponent<PostHeadProps> = function ({

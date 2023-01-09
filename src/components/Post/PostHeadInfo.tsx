@@ -22,6 +22,11 @@ const PostHeadInfoWrapper = styled.div`
   padding: 60px 40px;
   color: #fff;
   box-sizing: border-box;
+  
+  @media (max-width: 767px) {
+    width: 100%;
+    padding: 40px 30px;
+  }
 `
 
 const PrevPageLink = styled(Link)`
@@ -36,7 +41,7 @@ const PrevPageLink = styled(Link)`
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     width: 30px;
     height: 30px;
     font-size: 18px;
@@ -55,10 +60,10 @@ const Title = styled.div`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   font-size: 45px;
-  font-weight: 800;
+  font-weight: 700;
 
-  @media (max-width: 768px) {
-    font-size: 30px;
+  @media (max-width: 767px) {
+    font-size: 36px;
   }
 `
 
@@ -66,17 +71,20 @@ const PostData = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 15px auto 0;
+  margin: 24px auto 0;
+  padding: 0 5px;
   width: 100%;
   max-width: 768px;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 20px;
+  box-sizing: border-box;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     flex-direction: column;
     align-items: flex-start;
-    font-size: 15px;
-    font-weight: 400;
+    margin-top: 15px;
+    padding: 0 3px;
+    font-size: 16px;
+    line-height: 25px;
   }
 `
 

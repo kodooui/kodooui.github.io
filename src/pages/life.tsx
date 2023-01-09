@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import {graphql} from "gatsby";
 import {PostListItemType} from "../types/PostItem.types";
 import {IGatsbyImageData} from "gatsby-plugin-image";
@@ -6,6 +6,9 @@ import Template from "components/Common/Template";
 import Aside from "components/Common/Aside";
 import Content from "components/Common/Content";
 import { TabTypes } from "../constants";
+import CategoryList, { CategoryListProps } from "components/Main/CategoryList";
+import PostList from "components/Main/PostList";
+import Container from "components/Main/Container";
 
 
 type LifePageProps = {
@@ -46,8 +49,37 @@ const LifePage: FunctionComponent<LifePageProps> = function ({
    }
  },
 }) {
+  const [selectedCategory, setCategory] = useState('All');
+  const changeCategory = (category: string) => {
+    setCategory(category);
+  }
 
   const tabType = TabTypes.life;
+
+  const categoryEntities = useMemo(
+    () =>
+      edges.reduce(
+        (
+          list: CategoryListProps['categoryEntities'],
+          {
+            node: {
+              frontmatter: { categories },
+            },
+          }: PostListItemType
+        ) => {
+          categories.forEach(category => {
+            if (list[category] === undefined) list[category] = 1;
+            else list[category]++;
+          });
+
+          list['All']++;
+
+          return list;
+        },
+        { All: 0 },
+      ),
+    [],
+  )
 
   return (
     <Template
@@ -57,12 +89,21 @@ const LifePage: FunctionComponent<LifePageProps> = function ({
       image={publicURL}
       tabType={tabType}
     >
-      <Aside>
-
-      </Aside>
-      <Content>
-
-      </Content>
+      <Container>
+        <Aside>
+          <CategoryList
+            selectedCategory={selectedCategory}
+            categoryEntities={categoryEntities}
+            changeCategory={changeCategory}
+          />
+        </Aside>
+        <Content>
+          <PostList
+            selectedCategory={selectedCategory}
+            posts={edges}
+          />
+        </Content>
+      </Container>
     </Template>
   )
 };
@@ -79,6 +120,7 @@ export const getPostList = graphql`
       }
     }
     allMarkdownRemark(
+      filter: {fields: {slug: {glob: "/life/*"}}},
       sort: { order: DESC, fields: frontmatter___id }
     ) {
       edges {
