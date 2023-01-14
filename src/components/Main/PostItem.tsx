@@ -45,6 +45,7 @@ const ThumbnailImage = styled(GatsbyImage)`
 
 const PostItemContent = styled.div`
   padding: 25px 2px;
+  letter-spacing: -0.5px;
 
   @media (max-width: 767px) {
     padding: 12px 2px;
@@ -80,12 +81,12 @@ const Category = styled.div`
 const CategoryItem = styled.div`
   margin: 2.5px 5px;
   padding: 3px 2px;
-  font-size: 18px;
   color: #5d89ff;
+  font-size: 18px;
 
   @media (max-width: 767px) {
-    font-size: 16px;
     margin: 2.5px 4px;
+    font-size: 16px;
   }
 `;
 
@@ -128,8 +129,8 @@ const PostItemLink = styled(Link)`
   display: block;
 
   &:hover ${ThumbnailWrapper} {
-    transform: translateY(-10px);
-    box-shadow: #ccc 0 4px 12px;
+    transform: translateY(-8px);
+    box-shadow: #eee 0 4px 12px;
   }
   &:hover ${PostItemContent} {
     filter: contrast(200%);

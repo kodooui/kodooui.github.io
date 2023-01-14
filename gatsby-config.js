@@ -1,6 +1,13 @@
+const myCustomQueries = {
+  sm: '(min-width: 375px)',
+  tb: '(min-width: 768px)',
+  md: '(min-width: 1024px)',
+  pc: '(min-width: 1440px)',
+};
+
 module.exports = {
   siteMetadata: {
-    title: `Kodoo's Blog`,
+    title: `Woo0.Blog`,
     description: `FE 지식 탐구중 (o-o)`,
     author: `kowoo0`,
     siteUrl: `https://kowoo0.github.io/`,
@@ -60,6 +67,12 @@ module.exports = {
       options: {
         icon: `${__dirname}/static/profile-image.png`,
       }
+    },
+    {
+      resolve: `gatsby-plugin-breakpoints`,
+      options: {
+        queries: myCustomQueries,
+      },
     },
     {
       resolve: `gatsby-plugin-google-fonts`,

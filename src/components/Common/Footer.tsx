@@ -9,8 +9,8 @@ const FooterWrapper = styled.footer`
   font-size: 15px;
   text-align: center;
   line-height: 1.5;
-
-  @media (max-width: 768px) {
+  
+  @media (max-width: 767px) {
     font-size: 13px;
   }
 `
@@ -19,7 +19,7 @@ const Footer: FunctionComponent = () => {
   return (
     <FooterWrapper>
       Thank You for Visiting My Blog, Have a Good Day 😆
-      <br />© 2022 Developer Kodoo, Powered By Gatsby.
+      <br />© 2023 Developer Woo0, Powered By Gatsby.
     </FooterWrapper>
   )
 }

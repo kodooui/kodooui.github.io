@@ -10,7 +10,7 @@ export const AsideWrapper = styled.aside`
     display: none;
     z-index: 999;
     position: fixed;
-    top: 140px;
+    top: 160px;
     left: 0;
     width: 100%;
     height: calc(100vh - 140px);
