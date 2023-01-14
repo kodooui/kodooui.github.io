@@ -5,6 +5,8 @@ import { TabType } from "../../types/Tab.types";
 import { TabTypes } from "../../constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
+import { useBreakpoint } from "gatsby-plugin-breakpoints";
+import { isIOS } from "utils/userAgent";
 
 type HeaderProps = {
   tab: TabType;
@@ -48,15 +50,11 @@ const Container = styled.div`
 `
 
 const Title = styled.h1`
-  overflow: hidden;
   height: 90px;
   color: #333;
   font-size: 37px;
-  line-height: 92px;
-
-  @media (max-width: 767px) {
-    line-height: 90px;
-  }
+  line-height: 90px;
+  letter-spacing: ${isIOS() ? '-1px' : '-0.5px'};
 `
 
 export const TabWrap = styled.div`
@@ -66,6 +64,7 @@ export const TabWrap = styled.div`
 
   @media (max-width: 767px) {
     display: none;
+    margin-top: 20px;
   }
 `
 
@@ -129,6 +128,8 @@ export const GithubLink = styled.a`
 
   @media (max-width: 767px) {
     display: none;
+    width: 38px;
+    height: 38px;
   }
 `
 
@@ -155,10 +156,14 @@ const Header: FunctionComponent<HeaderProps> = ({
   menu,
   toggleMenu,
 }) => {
+  const breakpoints = useBreakpoint();
+
   return (
     <HeaderWrapper>
       <Container>
-        <Title>{tab}.Blog</Title>
+        <Title>
+          {breakpoints.tb ? 'woo0.blog' : `${tab}.log`}
+        </Title>
         <TabWrap>
           <TabGroup>
             {Object.entries(TabTypes).map(([key, value]) => (

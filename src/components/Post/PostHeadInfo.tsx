@@ -16,7 +16,7 @@ export type PostHeadInfoProps = {
 const PostHeadInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 1440px;
+  max-width: 1440px;
   height: 100%;
   margin: 0 auto;
   padding: 60px 40px;
@@ -24,8 +24,9 @@ const PostHeadInfoWrapper = styled.div`
   box-sizing: border-box;
   
   @media (max-width: 767px) {
-    width: 100%;
+    max-width: none;
     padding: 40px 30px;
+    letter-spacing: -0.5px;
   }
 `
 

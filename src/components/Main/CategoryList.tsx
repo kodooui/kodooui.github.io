@@ -27,7 +27,7 @@ const CategoryItem = styled(({ ...props }: ButtonHTMLAttributes<HTMLButtonElemen
   display: block;
   position: relative;
   padding: 0 20px;
-  min-width: 150px;
+  min-width: 178px;
   height: 48px;
   border-radius: 5px;
   color: #000;
@@ -62,7 +62,7 @@ const ShadowBox = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 150px;
+  width: 178px;
   height: 48px;
   border-radius: 5px;
   transition: transform 0.3s ease-out;
